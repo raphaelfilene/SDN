@@ -30,10 +30,11 @@
 		</div>
 		<ul id="menu">
 			<li id="link-intro">Introdução</li>
-			<li id="link-historia">História</li>
-			<li id="link-sdn">SDN</li>
+			<li id="link-definicao">Definição</li>
 			<li id="link-arquitetura">Arquitetura</li>
+			<li id="link-ferramentas">Ferramentas</li>
 			<li id="link-aplicacoes">Aplicações</li>
+			<li id="link-desafios">Desafios</li>
 			<li id="link-conclusao">Conclusão</li>
 			<li id="link-faq">FAQ</li>						
 			<li id="link-referencias">Referências</li>
@@ -41,115 +42,223 @@
 		</ul>
 		<div id="area-conteudo">
 			<div class="conteudo fonte-pequena" id="intro">
-				<img id="img-ufrj" src="imagens/ufrj.jpg">
+				<p><img id="img-ufrj" src="imagens/ufrj.jpg"></p>
 				<br><br><br><br>
 				<p class="centro">
 					Autores: <b>Lucas Chagas, Raphael Evangelista Filene</b><br>
 					Universidade Federal do Rio de Janeiro (UFRJ)<br>
 					Departamento de Engenharia Eletrônica (DEL)<br>
 					Engenharia de Computação e Informação (ECI)<br>
-					EEL877 - Redes de Computadores 2 - 2018.2<br>
+					EEL879 - Redes de Computadores 2 - 2018.2<br>
 					Professor: Luís Henrique M. K.
 				</p>
 				<br>
 				<p>
-					Este trabalho foi feito de modo a abordar o Bluetooth Low Energy (previamente conhecido por Bluetooth Smart), uma modificação da tecnologia Bluetooth clássica feita com o intuito de reduzir o gasto energético. Veremos a história do desenvolvimento do Bluetooth, desde suas versões iniciais até as mais recentes; também teremos uma breve descrição do Low Energy, e de como ele difere da tecnologia clássica. Passaremos por sua arquitetura, e logo como ele foi implementado, e por fim veremos algumas das aplicações para as quais ele está sendo utilizado na atualidade. Concluiremos o trabalho com 5 perguntas e respostas e as referências utilizadas durante seu processo de criação.
+					O sucesso da área de redes e da Internet é algo que pode ser observado com facilidade. Muitas das atividades realizadas atualmente estão conectadas de algum modo às redes de computadores, de tal modo que sem a Internet diversos serviços essenciais para o funcionamento da sociedade parariam de funcionar. Entretanto, essa dependência trouxe consigo uma expectativa de que a Internet estará sempre estável e funcional. Logo, implantar novas tecnologias e protocolos se torna uma tarefa árdua, dado que há um risco de interrupção de atividades que não é aceitável na conjuntura atual. Com essa inflexibilidade da arquitetura de redes, passou-se então a afirmar que a Internet está "calcificada".
+				</p>
+				<p>
+					Além disso, modificações de configurações de rede devem ser feitas manualmente em cada componente, com o processo de configuração muitas vezes variando dependendo do fabricante. Isso implica em maiores gastos, dado que requerem-se pessoas com conhecimento especializado de como tratar de cada equipamento, além do fato de que tratar todos os componentes em uma rede grande consome uma quantia considerável de tempo. 
+				</p>
+				<p>
+					É com este contexto que começou a ser desenvolvida a tecnologia de Redes Definidas por Software (SDN). Esta foi feita de modo a permitir um gerenciamento automático e eficiente da rede, facilitando o controle de múltiplas redes de computadores e a implementação de novas tecnologias e protocolos.
 				</p>		
 			</div>
-			<div class="conteudo fonte-pequena" id="historia">
-				<h1>História</h1>
+			<div class="conteudo fonte-pequena" id="definicao">
+				<h1>Definição</h1>
+
 				<p>
-					Vivemos em uma sociedade onde as redes de computadores e a internet já se fundiram à nossa forma de se socializar, obter conhecimento, fazer negócios e realizar as mais variadas atividades do nosso dia a dia. A evolução destas redes e da tecnologia da informação é tamanha que, atualmente, praticamente todas as atividades da nossa vida social, do setor privado e público, passam por alguma rede. Essa dependência em relação à rede cria certa barreira para a pesquisa e desenvolvimento de inovações na área. Devido à necessidade de uma estabilidade constante, arriscar interrupções na transmissão dos dados para testar novos protocolos ou tecnologias, ou que dependam de alterações no hardware em uso, trona-se pouco viável.
-				</p>
-				<p>
-					Para continuar inovando de forma gradual e sem interrupções na rede, a comunidade de pesquisa e desenvolvimento em Redes de Computadores tem investido no desenvolvimento de soluções que agreguem mais recursos e interfaces de programação aos componentes da rede, facilitando assim a pesquisa e inserção de novas tecnologias. E para saber mais sobre esses novos recursos e possibilidades, bem como seus benefícios, fizemos este post pra você se inteirar de todos eles, e qual a melhor forma de integrá-los a sua empresa. Confira!
-				</p>		
-				<img id="img-historia" src="imagens/img1.jpg">
-			</div>
-			<div class="conteudo fonte-pequena" id="sdn">
-				<h1>Software defined networking</h1>
-				<p>
-					O que possibilita a criação de interfaces em SDN — ou Software Defined Networking — é a existência de um sistema de controle que permite ao software desenvolvido monitorar, definir e alterar a comutação da rede através de uma interface de programação bem definida. Estes controladores de SDN podem ser considerados sistemas operacionais de redes de computadores, e assim como a maioria dos sistemas operacionais, esses são a ponte entre as aplicações que serão desenvolvidas para um maior controle da rede e o hardware. Abstraindo de forma unificada as funcionalidades físicas da rede, o controlador possibilita a criação de aplicações sob medida para cada rede específica e as necessidades geradas por ela.
-				</p>
-				<p>
-					Continuar falando sobre SDN...
-				</p>		
-				<img id="img-historia" src="imagens/img1.jpg">
-			</div>
-			<div class="conteudo fonte-pequena" id="arquitetura">
-				<h1>Arquitetura</h1>
-				<p>
-					O que possibilita a criação de interfaces em SDN — ou Software Defined Networking — é a existência de um sistema de controle que permite ao software desenvolvido monitorar, definir e alterar a comutação da rede através de uma interface de programação bem definida. Estes controladores de SDN podem ser considerados sistemas operacionais de redes de computadores, e assim como a maioria dos sistemas operacionais, esses são a ponte entre as aplicações que serão desenvolvidas para um maior controle da rede e o hardware. Abstraindo de forma unificada as funcionalidades físicas da rede, o controlador possibilita a criação de aplicações sob medida para cada rede específica e as necessidades geradas por ela.
-				</p>
-				<p>
-					Continuar falando sobre SDN...
-				</p>		
-				<img id="img-historia" src="imagens/img1.jpg">
-			</div>
-			<div class="conteudo fonte-pequena" id="aplicacoes">
-				<h1>Algumas aplicações</h1>
-				<p>
-					O que possibilita a criação de interfaces em SDN — ou Software Defined Networking — é a existência de um sistema de controle que permite ao software desenvolvido monitorar, definir e alterar a comutação da rede através de uma interface de programação bem definida. Estes controladores de SDN podem ser considerados sistemas operacionais de redes de computadores, e assim como a maioria dos sistemas operacionais, esses são a ponte entre as aplicações que serão desenvolvidas para um maior controle da rede e o hardware. Abstraindo de forma unificada as funcionalidades físicas da rede, o controlador possibilita a criação de aplicações sob medida para cada rede específica e as necessidades geradas por ela.
-				</p>
-				<p>
-					Continuar falando sobre SDN...
-				</p>		
-				<img id="img-historia" src="imagens/img1.jpg">
-			</div>
-			<div class="conteudo fonte-pequena" id="conclusao">
-				<h1>Nossa conclusão</h1>
-				<p>
-					O que possibilita a criação de interfaces em SDN — ou Software Defined Networking — é a existência de um sistema de controle que permite ao software desenvolvido monitorar, definir e alterar a comutação da rede através de uma interface de programação bem definida. Estes controladores de SDN podem ser considerados sistemas operacionais de redes de computadores, e assim como a maioria dos sistemas operacionais, esses são a ponte entre as aplicações que serão desenvolvidas para um maior controle da rede e o hardware. Abstraindo de forma unificada as funcionalidades físicas da rede, o controlador possibilita a criação de aplicações sob medida para cada rede específica e as necessidades geradas por ela.
-				</p>
-				<p>
-					Continuar falando sobre SDN...
-				</p>		
-				<img id="img-historia" src="imagens/img1.jpg">
-			</div>
-			<div class="conteudo fonte-pequena" id="faq">
-				<h1>Perguntas frequentes</h1>
-				<p class="pergunta">
-					Quais são os modos de conexão do dispositivo BLE?
-				</p>
-				<p class="resposta">
-					O modo "escravo" que se conecta e envia dados a apenas um dispositivo denominado "mestre", e o modo "mestre" que pode se conectar a um ou vários dispositivos "escravos".
-				</p>
-				
-				<p class="pergunta">
-					Cite alguns motivos que tornam a tecnologia BLE econômica em energia.
-				</p>
-				<p class="resposta">
-					Possui baixa taxa de tráfico, com transmissões da ordem de milisegundos e possui um mecanismo que deixa o sistema no estado "dormindo" na maior parte do tempo.
-				</p>
-				
-				<p class="pergunta">
-					O Bluetooth LE é um substituto do Bluetooth clássico?
-				</p>
-				<p class="resposta">
-					Não. O Bluetooth clássico trabalha com tráfego contínuo enquanto que o Bluetooth LE tem tráfego baixo e de transmissões curtas para diminuir seu consumo de energia. Assim, os propósitos deles são distintos, cabendo a utilização de uma ou outra de acordo com a finalidade e necessidade do produto em questão.
-				</p>
-				
-				<p class="pergunta">
-					É possível haver interferência entre um sinal Bluetooth e um sinal de Wi-Fi? Se sim, existe alguma maneira de minimizar este problema?
-				</p>
-				<p class="resposta">
-					Sim, é possível uma vez que ambos operam numa frequência de 2.4Ghz. Porém, o BLE possui um mecanismo denominado AFH (Adaptative Frequency Hopping) que evita utilizar as frequências já ocupadas, reduzindo consideravelmente a possibilidade de ocorrerem interferências.
+					Redes Definidas por Software (SDN) é uma tecnologia que, através da separação dos planos de controle e dados, facilita o gerenciamento da rede ao permitir que um único controlador seja capaz de controlar múltiplos dispositivos. Isso é alcançado ao tornar o controle da rede algo facilmente programável e abstraindo a infraestrutura da rede de modo a facilitar a adoção de novas aplicações e serviços de rede.
 				</p>
 
+				<h1>Separação dos Planos</h1>
+
+				<p>
+					A principal característica de SDN é a separação do plano de dados do plano de controle. Na arquitetura atual, estes estão acoplados e são individuais por cada nó da rede, atuando em conjunto de modo a encaminhar os pacotes recebidos. Após a separação, o plano de controle passa a ser responsável pela parte "inteligente" da rede, determinando quais serão as rotas seguidas por novos pacotes; por outro lado, o plano de dados fica responsável somente pelo próprio encaminhamento físico dos pacotes. Com SDN, um controlador passa a ser responsável pelo gerenciamento de múltiplos nós da rede, abrindo assim a possibilidade de toda a rede ser configurada a partir de um único nó central.
+				</p>
+
+				<img id="sdn-planos" src="imagens/sdn1.png">
+				<br>
+				<span><i>Comparação dos planos de controle e dados na arquitetura tradicional e com SDN. Retirado de: https://commsbusiness.co.uk/features/software-defined-networking-sdn-explained/</i></span>	
+
+				<h1>Controlador(es)</h1>
+
+				<p>
+					Com a separação dos planos, o plano de controle passa a ser responsável pela classificação dos pacotes recebidos, definindo qual a rota que será seguida por eles. Essa definição é feita através de um controlador: este fornece à SDN a capacidade de gerenciar o fluxo de pacotes nos switches e roteadores, e é responsável por implementar as regras que classificarão os fluxos recebidos, regras essas estabelecidas pelo gerenciador de rede através de uma interface.
+				</p>
+
+				<h1>APIs (Application Programming Interfaces)</h1>
+
+				<p>
+					Para que as aplicações sejam capazes de se comunicar com a rede, e os planos sejam capazes de comunicar-se entre si, foram implementadas APIs para realizar esse diálogo. Essas APIs se dividem em: Northbound, responsável pela comunicação entre aplicações e o plano de controle, e Southbound, responsável pela comunicação entre o plano de controle e o plano de dados. 
+				</p>
+			</div>
+			<div class="conteudo fonte-pequena" id="arquitetura">
+				<h1>Visão Geral</h1>
+
+				<p>
+					A figura abaixo apresenta uma versão simplificada da arquitetura SDN, explicitando a separação entre os planos de aplicação, controle e dados, assim como os elementos que compõem cada plano e as APIs que os conectam.
+				</p>
+
+				<img id ="sdn-architecture" src="imagens/sdn2.png">
+				<br>
+				<span><i>Arquitetura simplificada de SDN. Retirado de: https://www.sdxcentral.com/sdn/definitions/inside-sdn-architecture/</i></span>
+
+				<h1>Plano de Aplicações</h1>
+
+				<h1>Northbound API</h1>
+
+				<p>
+					A Northbound API é responsável pela comunicação entre o plano de aplicações e o plano de controle, permitindo que aplicações responsáveis pelo controle de funções de rede possam atuar sobre a ela de modo correto. Desse modo, esta interface é responsável por transmitir os requisitos dessas aplicações para camadas inferiores, assim como retornar as possíveis respostas e estatísticas da rede para as aplicações que originaram esses requisitos.
+				</p>
+
+				<h1>Plano de Controle</h1>
+
+				<p>
+					Como dito anteriormente, o plano de controle passa a ser responsável pela parte "inteligente" da rede em uma SDN através da implementação de um controlador. De modo a facilitar a adoção de novas políticas de rede e a modificação das já existentes, é também nesse plano que é implementada a interface responsável por permitir ao administrador realizar as mudanças desejadas. Para reduzir erros e propiciar uma adesão maior à tecnologia, esta interface foi implementada de modo que todas as alterações possam ser feitas de modo simples e intuitivo.
+				</p>
+
+				<p>
+					A principal função oferecida pelo controlador é a capacidade de priorizar ou bloquear pacotes que sejam recebidos pela rede, sendo responsável por processar e definir quais serão as rotas seguidas por tais pacotes. Outras funções incluem a análise do estado da rede, a obtenção de informações sobre sua topologia e o gerenciamento dos dispositivos que a compõem. É também através dele que são definidas e impostas as regras responsáveis pela comunicação entre serviços e aplicações.
+				</p>
+
+				<h1>Southbound API</h1>
+
+				<p>A Southbound API é um dos principais elementos responsáveis por possibilitar a separação do plano de dados do plano de controle. É através dela que o controlador é capaz de enviar ao plano de dados informações necessárias para este realizar a classificação dos pacotes, assim como reprogramar os equipamentos de modo a implementar funções como controle de fluxo e firewall. É também através desta interface que fluxos novos e, consequentemente, desconhecidos, são enviados pelos equipamentos ao controlador para que este possa classificá-los.</p>
+
+				<h1>Plano de Dados</h1>
+
+				<p>
+					Após a divisão, este plano ficou responsável somente pelo encaminhamento dos pacotes na rede, sendo composto por elementos responsáveis por realizar este processo como roteadores, comutadores e switches. Entretanto, diferentemente de suas versões tradicionais, eles não utilizam protocolos de roteamento ou outros algoritmos complexos dentro de si, dado que estes são agora implementados pelo plano de controle.
+				</p>
+
+				<p>
+					O modo como o plano de dados atua depende principalmente de como o plano de controle realiza a comunicação com ele, ou seja, diferentes Southbound APIs fazem com que este plano execute suas funções de modos variados. Utilizando de exemplo o OpenFlow como Southbound API, os dispositivos no plano de dados dependerão somente de uma tabela de fluxos para examinar, tratar e direcionar os fluxos recebidos. Um fluxo, de acordo com a RFC 3917, é um conjunto de pacotes IP passando por um ponto de observação na rede durante um determinado intervalo de tempo. 
+				</p>
+
+				<p>
+					Essas tabelas de fluxo atuam examinando o cabeçalho dos pacotes recebidos bit a bit, lendo informações como IP de origem e destino, portas de origem e destino, protocolo, dentre outros, e comparando-os com os valores presentes na tabela. Quando os valores encontrados forem compatíveis, ações podem ser tomadas para aquele fluxo, com estas geralmente sendo encaminhá-lo por um caminho específico ou descartá-lo. Outras ações incluem mandá-lo para a próxima tabela de fluxos ou, caso seja um fluxo novo, enviá-lo ao controlador para descobrir que ação deve ser tomada para casos similares.
+				</p>
+
+				<p>
+					As tabelas de fluxo também mantêm estatísticas de utilização, com informações a respeito da frequência em que cada entrada na tabela é examinada, que podem ser retornadas ao administrador para que este tenha maior informação e controle sobre detalhes da rede. 
+				</p>
+
+			</div>
+			<div class="conteudo fonte-pequena" id="ferramentas">
+				<h1>Ferramentas</h1>
+
+				<p>
+					Uma importante característica da área de SDN é a presença de variadas ferramentas, muitas de código aberto, criadas de modo a implementar os elementos necessários para o funcionamento da tecnologia. O OpenFlow, sendo o primeiro protocolo de comunicação implementado tendo em mente a utilização em SDN, atualmente é a principal Southbound API utilizada. Muitas outras fazem uso desta API ou implentam melhorias baseando-se nela, como por exemplo o Open vSwitch (comutador virtual utilizando OpenFlow) e o OVSDB, que implementa o protocolo OpenFlow de modo a este ser compatível com o Open vSwitch. Outras ferramentas importantes são implementações de controladores, como por exemplo o FlowVisor e o OpenDaylight, que são essenciais para o funcionamento do plano de controle e consequentemente da rede.
+				</p>
+
+				<h1>Open Flow</h1>
+
+				<p>
+					Concebido inicialmente nas universidades de Stanford e Berkeley em 2007, este protocolo é responsável por permitir a manipulação e o acesso direto a equipamentos no plano de dados, sendo a Southbound API mais utilizada no contexto de SDN. Como explicitado anteriormente, sua funcionalidade advém do uso de uma tabela de fluxos, com os fluxos recebidos sendo comparados aos valores na tabela e o equipamento de rede executando as ações correspondentes, conforme indicado. 
+				</p>
+
+			<img id ="sdn-openflow" src="imagens/sdn3.png">
+				<br>
+				<span><i>Funcionamento do protocolo OpenFlow. Retirado de: http://www.fiber-optic-transceiver-module.com/openvswitch-vs-openflow-what-are-they-whats-their-relationship.html</i></span>
+
+				<h1>Open vSwitch</h1>
+
+				<p>
+					O Open vSwitch é um comutador virtual distribuído, de código aberto, que implementa o protocolo OpenFlow. Sua função é simular comutadores em ambiente virtuais, permitindo que máquinas virtuais comuniquem-se entre si. A principal vantagem que ele traz é a capacidade de simular variadas topologias de rede em um ambiente limitado, permitindo que testes de novas funções virtuais de rede possam ser feitos com maior facilidade. 
+				</p>
+
+				<p>
+					Dentre os recursos oferecidos pelo Open vSwitch, destacam-se: criação e modificação de VLANs e firewalls, modelagem e enfileiramento do tráfego, assim como disponibilização de ferramentas para monitoramento da rede, como Netflow e sFlow.
+				</p>
+
+				<h1>FlowVisor</h1>
+
+				<h1>OpenDaylight</h1>
+			</div>
+			<div class="conteudo fonte-pequena" id="aplicacoes">
+				<h1>Aplicações</h1>
+			</div>
+			<div class="conteudo fonte-pequena" id="desafios">
+				<h1>Desafios</h1>
+
+				<p>
+					Sendo uma tecnologia ainda em seus estágios iniciais de desenvolvimento, SDN ainda possui muitos desafios a superar antes que possa ser adotada como uma arquitetura padrão de redes. Dentre esses desafios, destacam-se os riscos de segurança, os problemas desempenho, a questão da escalabilidade, a interoperabilidade de equipamentos que fazem uso de SDN e a confiança necessária ao se utilizar uma arquitetura centralizada.
+				</p>
+
+				<h1>Escalabilidade</h1>
+
+				<p>
+					Limite de quanto um controlador é capaz de processar: dificuldades surgem quando há a necessidade de gerenciar uma rede grande.
+				</p>
+
+				<h1>Segurança</h1>
+
+				<p>
+					Existem riscos de segurança associados à SDN, alguns dos quais também afetam a arquitetura de rede tradicional e outros específicos à nova tecnologia. Um exemplo que afeta ambos é o ataque de negação de serviço (DoS), dado que pode-se tentar sobrecarregar a capacidade do controlador de processar novos fluxos de modo a incapacitar a rede.
+				</p>
+
+				<h1>Desempenho</h1>
+
+				<p>
+					Outro desafio é aumentar o desempenho: por exemplo, reduzindo o tempo necessário para envio dos fluxos entre os planos de controle e dados, assim como do tempo necessário para o processamento dos fluxos recebidos.
+				</p>
+
+				<h1>Confiança</h1>
+
+				<p>
+					Outro desafio é a fragilidade gerada ao concentrar toda a rede em um único nó, sendo este um ponto único de falha. Uma solução é a implementação da SDN por múltiplos controladores, que servem como uma garantia de que a rede continuará a funcionar caso um controlador falhe. Porém, a introdução de múltiplos controladores traz consigo a necessidade de serem implementados protocolos capazes de realizar a comunicação entre estes elementos. Desse modo, foram desenvolvidas as APIs Westbound e Eastbound para realizar a comunicação entre controladores e mantê-los sincronizados quanto as políticas de rede. Entretanto, a adoção de novas APIs traz consigo a questão de o quanto essa comunicação de diferentes controladores afetará o desempenho da rede.
+				</p>
+
+				<h1>Interoperabilidade</h1>
+
+				<p>
+					Por fim, um importante aspecto de SDN é a necessidade de todos os dispositivos serem capazes de comunicarem-se entre si, comunicação esta realizada pelas APIs. Entretanto, a única API que possui uma ferramenta adotada mais amplamente é a Southbound, com o OpenFlow. Northbound e West/Eastbound APIs não são padronizadas, gerando assim uma maior possibilidade de surgirem problemas relacionados ao uso de diferentes APIs nos casos de controladores comunicando-se entre si e com aplicações na camada superior.
+				</p>
+			</div>
+			<div class="conteudo fonte-pequena" id="conclusao">
+				<h1>Conclusão</h1>
+			</div>
+			<div class="conteudo fonte-pequena" id="faq">
+
+				<h1>Perguntas Frequentes</h1>
 				<p class="pergunta">
-					Quais as principais inovações feitas pelo Bluetooth 5?
+					Um dos principais aspectos da tecnologia de SDN, quando comparada à arquitetura de rede tradicional, é a separação dos planos. Como os planos são separados, e quais as funções de cada um?
 				</p>
 				<p class="resposta">
-					Bluetooth 5 possui quatro vezes o alcance (usualmente até 40 metros) e o dobro da velocidade (até 2 Mb/s) da versão 4.2, além de ter introduzido o Dual Audio.
+					Os planos são separados em plano de controle e plano de dados. O plano de controle fica responsável pela parte "inteligente" da rede, sendo responsável por determinar quais as rotas seguidas por novos pacotes, enquanto o plano de dados é responsável pelo encaminhamento físico desses pacotes.
+				</p>
+				<p class="pergunta">
+					Explique como ocorre o encaminhamento de pacotes no protocolo OpenFlow: 
+				</p>
+				<p class="resposta">
+					Quando o fluxo dos pacotes sendo recebidos ainda não está definido, o OpenFlow envia os pacotes para o controlador de modo a este definir que ação deve ser tomada para fluxos semelhantes. Os fluxos são então enviados novamente ao plano de dados para que sejam então encaminhados de acordo com as definições feitas pelo controlador, e todo fluxo subsequente que se encaixe no mesmo elemento na tabela de fluxos seguirá pelo mesmo caminho.
 				</p>
 			</div>
 			<div class="conteudo fonte-pequena" id="referencias">
 				<h1>Referências</h1>
 				<p>
-					[1] GALEEV, Mikhail. <b>Bluetooth 4.0: An introduction to Bluetooth Low Energy – Part I.</b> EE Times, set. 2011. Disponível em: https://www.eetimes.com/document.asp?doc_id=1278927  Acessado em 8 de Abril de 2018.
+					[1] KREUTZ, Diego; RAMOS, Fernando M. V.; VERÍSSIMO, Paulo Esteves; Rothenberg, Christian Esteve; AZODOLMOLKY, Siamak; UHLIG, Steve. <b>"Software-Defined Networking: A Comprehensive Survey", Proceedings of the IEEE, Janeiro, 2015.</b> Disponível em: https://ieeexplore.ieee.org/document/6994333/  Acessado em 26 de Agosto de 2018
 				</p>
 				<p>
-					[2] WHITTAKER, Tim. <b>Bluetooth low energy (BLE) explained. EE Times, jul. 2011.</b> Disponível em: https://www.eetimes.com/document.asp?doc_id=1278968  Acessado em 8 de Abril de 2018.
+					[2] GUEDES, Dorgival; VIEIRA, Luiz Filipe Menezes; VIEIRA, Marcos Menezes; RODRIGUES, Henrique; NUNES, Rogério Vinhal. <b>“Redes Definidas por Software: uma abordagem sistêmica para o desenvolvimento das pesquisas em Redes de Computadores”, Minicurso do XXX Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos, Maio, 2012.</b> Disponível em: http://homepages.dcc.ufmg.br/~mmvieira/cc/papers/minicurso-sdn.pdf  Acessado em 26 de Agosto de 2018
+				</p>
+				<p>
+					[3] KREUTZ, Diego; RAMOS, Fernando M. V.; VERÍSSIMO, Paulo Esteves. <b>“Towards Secure and Dependable Software-Defined Networks”, ACM New York, Agosto, 2013.</b> Disponível em : https://www.ietf.org/proceedings/87/slides/slides-87-sdnrg-2.pdf  Acessado em 26 de Agosto de 2018
+				</p>
+				<p>
+					[4] BUTLER, Brandon. <b>“What SDN is and where it’s going”, Network World, Julho, 2017.</b> Disponível em: https://www.networkworld.com/article/3209131/lan-wan/what-sdn-is-and-where-its-going.html  Acessado em 26 de Agosto de 2018
+				</p>
+				<p>
+					[5] OPEN NETWORKING FOUNDATION, <b>"Software-Defined Networking (SDN) Definition".</b> Disponível em: https://www.opennetworking.org/sdn-definition/  Acessado em 26 de Agosto de 2018
+				</p>
+				<p>
+					[6] SEZER, S.; SCOTT-HAYWARD, S.; CHOUHAN, P. K.; FRASER, B.; LAKE, D.; FINNEGAN, J.; VILJOEN, N.; MILLER, M.; RAO, N.. <b>“Are We Ready for SDN? Implementation Challenges for Software-Defined Networks”, IEEE Communications Magazine, Julho, 2013.</b> Disponível em: https://ieeexplore.ieee.org/document/6553676/  Acessado em 26 de Agosto de 2018
+				</p>
+				<p>
+					[7] LIGUORI, Angelo; WINANDY, Marcel. <b>"The Diamond Approach for SDN Security", IEEE Softwarization, Março, 2018.</b> Disponível em: https://sdn.ieee.org/newsletter/march-2018/the-diamond-approach-for-sdn-security  Acessado em 26 de Agosto de 2018
+				</p>
+				<p>
+					[8] JAMMAL, Manar; SINGH, Taranpreet; SHAMI, Abdallah; ASAL, Rasool; LI, Yiming. <b>"Software defined networking: State of the art and research challenges", Computer Networks, Julho, 2014.</b> Disponível em: https://ac.els-cdn.com/S1389128614002588/1-s2.0-S1389128614002588-main.pdf?_tid=e1cc7a13-6eb8-4624-8532-332f1fd97d66&acdnat=1536675943_8409c98826bfbf8d0c9bd62a6cb6d753  Acessado em 11 de Setembro de 2018
 				</p>
 			</div>
 			<div class="conteudo fonte-pequena" id="autoria">
