@@ -176,7 +176,52 @@
 				<h1>OpenDaylight</h1>
 			</div>
 			<div class="conteudo fonte-pequena" id="aplicacoes">
-				<h1>Aplicações</h1>
+				<h1>Qualidade de Serviço (QoS)</h1>
+
+				<p>
+					A busca pela Qualidade de Serviço é uma das aplicações em redes de computadores. O QFlow é um exemplo de sistema que utiliza o paradigma SDN para garantir o isolamento de recursos e a qualidade de serviços para redes virtualizadas. A arquitetura do sistema QFlow é baseada no XenFlow, onde plano de controle é composto pelas máquinas virtuais Xen e o plano de dados por um comutador OpenFlow no domínio privilegiado, que possui acesso direto ao hardware.
+				</p>
+				<p>
+					O QFlow utiliza filas de encaminhamento associadas a cada roteador virtual, para garantir o isolamento dos recursos de cada rede virtual. Já para garantir a Qualidade de Serviço (QoS), são utilizadas filas na matriz de encaminhamento OpenFlow associadas às máquinas virtuais com os limites de banda superior e inferior bem definidos, garantindo a qualidade do serviço oferecido.
+				</p>
+
+				<h1>Software-defined Mobile Network (SDMN)</h1>
+
+				<p>
+					Espera-se que o tráfego de dados móveis cresça mais rápido que a Internet fixa nos próximos anos e as futuras redes móveis devem ser dimensionadas para acomodar o crescimento esperado do tráfego. Para acompanhar o crescimento do tráfego, as redes móveis precisam não apenas passar por processos de arquitetura para otimizar os recursos atuais, mas também para adicionar novos componentes / tecnologias que aumentem a capacidade. No entanto, redes de backhaul móveis contêm dispositivos extremamente complexos e inflexíveis.
+				</p>
+
+				<p>
+					 Nessas bases, o SDN é uma das tecnologias promissoras que deverá resolver essas limitações nas redes móveis atuais. A SDN fornece as melhorias necessárias em flexibilidade, escalabilidade e desempenho para adaptar a rede móvel para acompanhar o crescimento esperado. A rede móvel definida por software (SDMN) está direcionando a atual rede móvel para um modelo centrado em fluxo que emprega hardware barato e um controlador logicamente centralizado. O SDN permite a separação do plano de encaminhamento de dados dos planos de controle. Os switches, roteadores e gateways habilitados para SDN são controlados por meio de um sistema operacional / controlador SDN e são vistos como recursos virtuais. O plano de controle dos elementos de rede móvel pode ser implantado em uma nuvem de operador para computação.
+				</p>
+
+				<p>
+					 Nesse paradigma, cada operador tem a flexibilidade de desenvolver seus próprios conceitos de rede, otimizar sua rede e atender às necessidades específicas de seus assinantes. Além disso, os switches de rede programáveis ​​por software no SDMN usam metodologias modernas de programação ágil. Essas metodologias de software podem ser desenvolvidas, aprimoradas e atualizadas em ciclos muito mais curtos do que o desenvolvimento dos modernos dispositivos de rede de backhaul móvel de última geração.
+				</p>
+
+				<p>
+					 A aquisição da virtualização em redes móveis LTE traz a vantagem econômica de duas maneiras. Frist, SDMN requer hardware barato, como servidores de commodities e switches em vez de dispositivos de gateway de backhaul móveis caros. Segundo, a introdução da tecnologia SDN nas redes móveis permite a entrada de novos atores no ecossistema de redes móveis, como ISV (fornecedor independente de software), provedores de nuvem, ISP (Internet Service Providers) e isso mudará o modelo de negócios das redes móveis.
+				</p>
+
+				<h1>Software-defined Wide-Area Network (SD-WAN)</h1>
+
+				<p>
+					SD-WAN (ou SDWAN), que traduzido significa Rede de Área Ampla definida por Software, é uma aplicação específica de SDN com as conexões WAN, que são utilizadas para conectar redes corporativas - incluindo filiais e data centers - em grande distância geográfica.
+				</p>
+
+				<p>
+					Uma WAN pode ser usada, por exemplo, para conectar filiais a uma rede corporativa central ou para conectar datacenters separados por distância. No passado, essas conexões WAN frequentemente usavam tecnologia que exigia hardware proprietário especial. O movimento SD-WAN procura mover mais do controle de rede é movido para a "nuvem", usando uma abordagem de software.
+				</p>
+
+				<p>
+					O principal objetivo da tecnologia SD-WAN (SDWAN) é fornecer uma conexão WAN habilitada para nuvem de classe empresarial, segura e simples, com o máximo de tecnologia aberta e baseada em software possível. Isso pode ser usado para fornecer conectividade básica de WAN ou pode ser usado para serviços comerciais premium, como VPN, otimização de WAN e controle de entrega de aplicativos (ADC).
+				</p>
+
+				<p>
+					Espera-se que a tendência acelere nos próximos anos. O que começou como uma solução para conectividade de WAN de centro de filial e data center que requer menos equipamentos proprietários, parece estar se expandindo para uma ampla gama de ofertas e tecnologias SD-WAN (SDWAN), incluindo VPN, segurança, otimização de WAN, NaaS e política de aplicativos ao controle.
+				</p>
+
+
 			</div>
 			<div class="conteudo fonte-pequena" id="desafios">
 				<h1>Desafios</h1>
@@ -217,6 +262,10 @@
 			</div>
 			<div class="conteudo fonte-pequena" id="conclusao">
 				<h1>Conclusão</h1>
+
+				<p>
+
+				</p>
 			</div>
 			<div class="conteudo fonte-pequena" id="faq">
 
@@ -260,6 +309,23 @@
 				<p>
 					[8] JAMMAL, Manar; SINGH, Taranpreet; SHAMI, Abdallah; ASAL, Rasool; LI, Yiming. <b>"Software defined networking: State of the art and research challenges", Computer Networks, Julho, 2014.</b> Disponível em: https://ac.els-cdn.com/S1389128614002588/1-s2.0-S1389128614002588-main.pdf?_tid=e1cc7a13-6eb8-4624-8532-332f1fd97d66&acdnat=1536675943_8409c98826bfbf8d0c9bd62a6cb6d753  Acessado em 11 de Setembro de 2018
 				</p>
+
+				<p>
+					[9] MATTOS, D. M. F.; DUARTE, O. C. M. B. <b>"QFlow: Um Sistema com Garantia de Isolamento e Oferta de Qualidade de Serviço para Redes Virtualizadas".</b> Disponível em: https://www.gta.ufrj.br/ftp/gta/TechReports/MaDu12.pdf  Acessado em 03 de Novembro de 2018
+				</p>
+
+				<p>
+					[10] <b>"Software Defined Mobile Networks (SDMN): Beyond LTE Network Architecture".</b> Disponível em: https://sites.google.com/site/callforchapterssdmn/  Acessado em 03 de Novembro de 2018
+				</p>
+
+				<p>
+					[11] <b>"What is Software-Defined WAN (or SD-WAN or SDWAN)?".</b> Disponível em: https://www.sdxcentral.com/sd-wan/definitions/software-defined-sdn-wan/  Acessado em 03 de Novembro de 2018
+				</p>
+				
+				 
+
+				
+
 			</div>
 			<div class="conteudo fonte-pequena" id="autoria">
 				<h1>Declaração de Autoria</h1>
