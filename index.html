@@ -80,17 +80,26 @@
 				<br>
 				<span><i>Comparação dos planos de controle e dados na arquitetura tradicional e com SDN. Retirado de: https://commsbusiness.co.uk/features/software-defined-networking-sdn-explained/</i></span>	
 
-				<h1>Controlador(es)</h1>
+				<h1>Controlador</h1>
 
 				<p>
-					Com a separação dos planos, o plano de controle passa a ser responsável pela classificação dos pacotes recebidos, definindo qual a rota que será seguida por eles. Essa definição é feita através de um controlador: este fornece à SDN a capacidade de gerenciar o fluxo de pacotes nos switches e roteadores, e é responsável por implementar as regras que classificarão os fluxos recebidos, regras essas estabelecidas pelo gerenciador de rede através de uma interface.
+					Sendo o principal elemento do plano de controle, o controlador oferece uma visão única e centralizada da rede. Este fornece à SDN a capacidade de gerenciar o fluxo de pacotes nos switches e roteadores, e é responsável por implementar as regras que classificarão os fluxos recebidos.
+				</p>
+
+				<p>
+					A visão global da topologia da rede possibilita o desenvolvimento de análises detalhadas sobre características do fucionamento da rede, permitindo assim que sejam tomadas decisões eficientes sobre quais modificações devem ser implementadas para garantir o bom funcionamento do sistema. A existência dessa visão global, além de simplificar o processo de tomada de decisões, também facilita a implementação das ações determinadas por ele.
+				</p>
+
+				<p>
+					Outra característica do controlador se dá pelo seu impacto na classificação dos pacotes recebidos, tendo um papel central no processo de criação da tabela de fluxos a ser seguida pela rede. É através dele que se fornece um ambiente de programação onde podem ser desenvolvidas aplicações que decidem o próximo salto de um fluxo. Essa interface de programação provê um meio de mais alto nível para definir as funções dos elementos de rede, o que facilita o desenvolvimento de funções voltadas para esta área. Além disso, essa programabilidade permite que seja implementada uma maior gama de funções lógicas voltadas para o monitoramento do fluxo na rede.
 				</p>
 
 				<h1>APIs (Application Programming Interfaces)</h1>
 
 				<p>
-					Para que as aplicações sejam capazes de se comunicar com a rede, e os planos sejam capazes de comunicar-se entre si, foram implementadas APIs para realizar esse diálogo. Essas APIs se dividem em: Northbound, responsável pela comunicação entre aplicações e o plano de controle, e Southbound, responsável pela comunicação entre o plano de controle e o plano de dados. 
+					Estas APIs são conjuntos de rotinas, protocolos e ferramentas responsáveis por possibilitar a comunicação entre os planos de controle e dados, assim como entre o controlador e aplicações que atuam diretamente na definição de políticas de rede. Essas APIs inicialmente dividem-se em Northbound, responsável pela comunicação entre essas aplicações utilizadas pelo administrador de rede e o plano de controle, e Southbound, responsável pela comunicação entre os plano de controle e dados.
 				</p>
+
 			</div>
 			<div class="conteudo fonte-pequena" id="arquitetura">
 				<h1>Visão Geral</h1>
@@ -104,6 +113,10 @@
 				<span><i>Arquitetura simplificada de SDN. Retirado de: https://www.sdxcentral.com/sdn/definitions/inside-sdn-architecture/</i></span>
 
 				<h1>Plano de Aplicações</h1>
+
+				<p>
+					Neste plano ficam presentes as aplicações responsáveis por criar e implementar novas funções que atuarão no contexto de SDN, sendo desse modo responsáveis pelo gerenciamento da rede. Estas funções podem, por exemplo, definir as políticas de rede estabelecidas no controlador. É através desse plano que o administrador de rede pode interagir diretamente com os elementos que compõem a rede, e alterar o modo como estes atuam conforme o desejado.
+				</p>
 
 				<h1>Northbound API</h1>
 
@@ -148,13 +161,13 @@
 				<h1>Ferramentas</h1>
 
 				<p>
-					Uma importante característica da área de SDN é a presença de variadas ferramentas, muitas de código aberto, criadas de modo a implementar os elementos necessários para o funcionamento da tecnologia. O OpenFlow, sendo o primeiro protocolo de comunicação implementado tendo em mente a utilização em SDN, atualmente é a principal Southbound API utilizada. Muitas outras fazem uso desta API ou implentam melhorias baseando-se nela, como por exemplo o Open vSwitch (comutador virtual utilizando OpenFlow) e o OVSDB, que implementa o protocolo OpenFlow de modo a este ser compatível com o Open vSwitch. Outras ferramentas importantes são implementações de controladores, como por exemplo o FlowVisor e o OpenDaylight, que são essenciais para o funcionamento do plano de controle e consequentemente da rede.
+					Uma importante característica da área de SDN é a presença de variadas ferramentas, muitas de código aberto, criadas de modo a implementar os elementos necessários para o funcionamento da tecnologia. O OpenFlow, sendo o primeiro protocolo de comunicação implementado tendo em mente a utilização em SDN, atualmente é a principal Southbound API utilizada. Muitas outras fazem uso desta API ou implentam melhorias baseando-se nela, como por exemplo o Open vSwitch (comutador virtual utilizando OpenFlow) e o OVSDB, que implementa o protocolo OpenFlow de modo a este ser compatível com o Open vSwitch. Outras ferramentas importantes são implementações de controladores, como por exemplo o OpenDaylight, que são essenciais para o funcionamento do plano de controle e consequentemente da rede.
 				</p>
 
 				<h1>Open Flow</h1>
 
 				<p>
-					Concebido inicialmente nas universidades de Stanford e Berkeley em 2007, este protocolo é responsável por permitir a manipulação e o acesso direto a equipamentos no plano de dados, sendo a Southbound API mais utilizada no contexto de SDN. Como explicitado anteriormente, sua funcionalidade advém do uso de uma tabela de fluxos, com os fluxos recebidos sendo comparados aos valores na tabela e o equipamento de rede executando as ações correspondentes, conforme indicado. 
+					Concebido inicialmente nas universidades de Stanford e Berkeley em 2007, este protocolo é responsável por permitir a manipulação e o acesso direto a equipamentos no plano de dados. Sua funcionalidade advém do uso de uma tabela de fluxos, com os fluxos recebidos sendo comparados aos valores na tabela e o equipamento de rede executando as ações correspondentes, conforme indicado. 
 				</p>
 
 			<img id ="sdn-openflow" src="imagens/sdn3.png">
@@ -171,9 +184,26 @@
 					Dentre os recursos oferecidos pelo Open vSwitch, destacam-se: criação e modificação de VLANs e firewalls, modelagem e enfileiramento do tráfego, assim como disponibilização de ferramentas para monitoramento da rede, como Netflow e sFlow.
 				</p>
 
+				<h1>OpenDaylight</h1>
+
+				<p>
+					Liderado pela comunidade e suportado pela indústria, o controlador OpenDaylight é uma ferramenta de código aberto que visa suprir as necessidades que possam surgir com o avanço das tecnologias de SDN e NFV. Sendo uma plataforma multiprotocolo e modular, esta possui suporte para múltiplos protocolos envolvendo SDN, incluindo OpenFlow e OVSDB, e foi desenvolvido de modo a facilitar a adoção novos protocolos conforme estes forem desenvolvidos e implementados.
+				</p>
+
+				<p>
+					Este controlador é implementado completamente por software, tendo sido desenvolvido de modo a funcionar através de um máquina virtual Java. Desse modo, ele pode ser implementado em qualquer plataforma que ofereça suporte à esta linguagem. Outra característica é a adoção de APIs Northbound abertas, o que facilita o desenvolvimento de aplicações que possam se comunicar com facilidade ao controlador.
+				</p>
+
 				<h1>FlowVisor</h1>
 
-				<h1>OpenDaylight</h1>
+				<p>
+					O FlowVisor funciona como um controlador especial, atuando como um middleware entre comutadores e outros controladores fazendo uso do protocolo OpenFlow. Todas as requisições feitas entre um comutador e um controlador passam pelo FlowVisor, com as mensagens trocadas entre dispositivos nos planos de dados e controle sendo desse modo transmitidas pela ferramenta. 
+				</p>
+
+				<p>
+					Sua importância reside no fato de possibilitar a divisão da rede entre múltiplos controladores, garantindo o isolamento entre as divisões criadas. Essa divisão pode ser feita utilizando elementos como os endereços ethernet e IP ou pelos protocolos das mensagens trocadas, por exemplo. Com esse isolamento, um controlador não é capaz de ver o fluxo de um comutador que não está sob seu controle, pois garante-se que cada controlador tem visão e acesso somente aos dispositivos da parte da rede atribuídos à ele.
+				</p>
+
 			</div>
 			<div class="conteudo fonte-pequena" id="aplicacoes">
 				<h1>Qualidade de Serviço (QoS)</h1>
@@ -233,38 +263,59 @@
 				<h1>Escalabilidade</h1>
 
 				<p>
-					Limite de quanto um controlador é capaz de processar: dificuldades surgem quando há a necessidade de gerenciar uma rede grande.
+					Ao propor uma tecnologia em que um dos principais aspectos é a centralização através de um controlador, SDN se depara com um problema o qual as redes atuais não precisam lidar: a escalabilidade. Todos os principais problemas relacionados à escalabilidade que surgem com a tecnologia se devem a introdução de um ponto único de falha, problemas estes que se tornam ainda mais evidentes conforme a rede cresce. Em um cenário de Internet das Coisas (IoT), esse é, em conjunto com a segurança, um dos principais desafios a serem superados antes que a tecnologia de SDN possa ser introduzida em maior escala.
+				</p>
+
+				<p>
+					Um exemplo dos problemas introduzidos é a escalabilidade do controlador. Sendo este limitado por quão rapidamente ele consegue responder aos dispositivos que ele controla, falhas começam a surgir na rede caso o número de dispositivos requerendo informações seja maior que a velocidade de processamento disponibilizada. Ao depender de somente um controlador, o processamento disponível pode rapidamente não ser capaz de atender aos dispositivos caso estes estejam em grande quantidade.
+				</p>
+
+				<p>
+					Uma possível solução para a questão da escalabilidade é implementar o controlador de maneira distribuída. Porém, para aplicar esta proposta é necessário serem implementados protocolos capazes de realizar a comunicação entre os múltiplos elementos. Essa necessidade de comunicação e de sincronia gera custos extras a rede, que podem afetar o desempenho desta a ponto de afetar a qualidade de serviço desejada. Soluções estão sendo desenvolvidas para tratar deste desafio, através da introdução de APIs denominadas East/Westbound. Atualmente, cada controlador implementa sua própria versão dessas APIs, que são responsáveis por transportar dados entre os controladores, verificar se os dados são compatíveis entre si, se as políticas de rede são equivalentes, dentre outras funções. O quanto essas APIs afetam o desempenho da rede, e como reduzir esse impacto, é outro desafio que deve ser solucionado.
 				</p>
 
 				<h1>Segurança</h1>
 
 				<p>
-					Existem riscos de segurança associados à SDN, alguns dos quais também afetam a arquitetura de rede tradicional e outros específicos à nova tecnologia. Um exemplo que afeta ambos é o ataque de negação de serviço (DoS), dado que pode-se tentar sobrecarregar a capacidade do controlador de processar novos fluxos de modo a incapacitar a rede.
+					A tecnologia de SDN possui muitos desafios de segurança em comum com os apresentados por redes tradicionais, além de outros introduzidos por características próprias de sua arquitetura. Muitos dos problemas introduzidos, que também estão ligados à questão da escalabilidade, são devido ao controlador ser um ponto único de falha, possibilitando que ataques neste ponto afetem toda a rede.
+				</p>
+
+				<p>
+					Uma das principais vulnerabilidades enfrentadas por SDN são ataques de negação de serviço (DoS). O objetivo destes é inundar a rede com um grande número de pacotes em um curto espaço de tempo, sobrecarregando assim o controlador. Segundo o processo usualmente adotado por protocolos que implementam SDN, o próprio OpenFlow sendo um exemplo neste caso, quando um fluxo desconhecido for encontrado informações a seu respeito devem ser enviadas ao controlador para decidir o que deve ser feito para fluxos similares. Esse envio pode ser feito de dois modos: enviando-se o fluxo completo ao controlador ou armazenando o conteúdo do fluxo no dispositivo do plano de dados e enviando somente o cabeçalho ao controlador. Ambos apresentam um problema no caso de um ataque de DoS: enviar o fluxo completo congestiona o canal, comprometendo o desempenho da rede; por outro lado, como o conteúdo dos fluxos ficam armazenados em buffers de tamanho limitado, enviar somente o cabeçalho pode rapidamente levar à perda de pacotes caso se estoure a capacidade da fila.
+				</p>
+
+				<p>
+					Outra vulnerabilidade introduzida vem do fato de muitas vezes a implementação de SDN se dar através de padrões abertos e conhecidos. Desse modo, atacantes podem utilizar o conhecimento sobre características da rede para descobrir e se aproveitar de possíveis vulnerabilidades. Invadir uma rede ou implementar código malicioso se tornam então falhas de segurança com um risco considerável de ocorrerem, e são desafios descobrir métodos tanto para evitar que estes ataques ocorram quanto para tratar das consequências de modo a minimizar os danos causados.
 				</p>
 
 				<h1>Desempenho</h1>
 
 				<p>
-					Outro desafio é aumentar o desempenho: por exemplo, reduzindo o tempo necessário para envio dos fluxos entre os planos de controle e dados, assim como do tempo necessário para o processamento dos fluxos recebidos.
+					A latência introduzida pela necessidade de comunicação entre os dispositivos nos planos de controle e dados é outro desafio introduzido por SDN. Como anteriormente estes planos estavam acoplados, a comunicação necessária ocorria sem afetar significativamente o desempenho da rede, o que deixa de ocorrer com a separação dos planos. Além disso, o tempo de processamento do controlador é outro fator que gera impacto no desempenho da rede como um todo: quanto mais esse demora para processar os fluxos recebidos, maior é o impacto causado. Desse modo, de modo a tratar destes dois desafios relacionados ao desempenho da rede, projetos precisam ser desenvolvidos visando mitigar o impacto causado pela adoção da nova tecnologia. 
 				</p>
 
-				<h1>Confiança</h1>
-
 				<p>
-					Outro desafio é a fragilidade gerada ao concentrar toda a rede em um único nó, sendo este um ponto único de falha. Uma solução é a implementação da SDN por múltiplos controladores, que servem como uma garantia de que a rede continuará a funcionar caso um controlador falhe. Porém, a introdução de múltiplos controladores traz consigo a necessidade de serem implementados protocolos capazes de realizar a comunicação entre estes elementos. Desse modo, foram desenvolvidas as APIs Westbound e Eastbound para realizar a comunicação entre controladores e mantê-los sincronizados quanto as políticas de rede. Entretanto, a adoção de novas APIs traz consigo a questão de o quanto essa comunicação de diferentes controladores afetará o desempenho da rede.
+					Um exemplo de projeto, feito com intuito de acelerar o tempo de processamento gasto no controlador, é o NOX-MT. Este é um controlador baseado no NOX, tendo como diferencial a adição de multithreading e conhecidas técnicas de otimização. Outro projeto desenvolvido com objetivos similares é o Floodlight, outro controlador desenvolvido tendo multithreading em mente. Este é um controlador baseado em Java, feito de modo a atuar segundo o protocolo OpenFlow.
 				</p>
 
 				<h1>Interoperabilidade</h1>
 
 				<p>
-					Por fim, um importante aspecto de SDN é a necessidade de todos os dispositivos serem capazes de comunicarem-se entre si, comunicação esta realizada pelas APIs. Entretanto, a única API que possui uma ferramenta adotada mais amplamente é a Southbound, com o OpenFlow. Northbound e West/Eastbound APIs não são padronizadas, gerando assim uma maior possibilidade de surgirem problemas relacionados ao uso de diferentes APIs nos casos de controladores comunicando-se entre si e com aplicações na camada superior.
+					Por fim, um importante aspecto de SDN é a necessidade de todos os dispositivos serem capazes de comunicarem-se entre si, comunicação esta realizada através de APIs. Entretanto, grande parte do que foi implementado até então não foi feito segundo algum padrão; pelo contrário, múltiplos protocolos e APIs estão sendo desenvolvidos, o que dificulta a definição de um modelo a ser seguido. A exceção neste caso é o protocolo OpenFlow, que frequentemente serve como base para outras Southbound APIs.
+				</p>
+
+				<p>
+					Com a falta de um padrão para APIs Northbound e East/Westbound, surge assim uma maior possibilidade de ocorrerem problemas devido à falhas de comunicação entre controladores e aplicações. Além disso, a necessidade de adaptar aplicações para funcionarem segundo múltiplas interfaces Northbound gera um gasto de capital maior para empresas potencialmente interessadas em investir na tecnologia, afetando assim seu crescimento e evolução.
 				</p>
 			</div>
 			<div class="conteudo fonte-pequena" id="conclusao">
 				<h1>Conclusão</h1>
 
 				<p>
-
+					Apresentamos neste trabalho os principais conceitos de Redes definidas por Software, assunto que vem sendo alvo de muitos estudos e investimentos para variadas áreas da tecnologia. O conceito, resumidamente, se baseia na separação dos planos de controle e de dados para facilitar a configuração da rede, incentivando a criação de muitas aplicações.
+				</p>
+				<p>
+					Além do conceito básico, tentamos também permear aspectos como aplicação, ferramentas, arquiteturas e os desafios que esta tecnologia precisa superar para se tornar uma arquitetura padrão de redes. Com isso, esperamos ter enriquecido bastante a discussão sobre esse tema.
 				</p>
 			</div>
 			<div class="conteudo fonte-pequena" id="faq">
