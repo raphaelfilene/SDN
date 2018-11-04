@@ -67,18 +67,12 @@
 				<h1>Definição</h1>
 
 				<p>
-					Redes Definidas por Software (SDN) é uma tecnologia que, através da separação dos planos de controle e dados, facilita o gerenciamento da rede ao permitir que um único controlador seja capaz de controlar múltiplos dispositivos. Isso é alcançado ao tornar o controle da rede algo facilmente programável e abstraindo a infraestrutura da rede de modo a facilitar a adoção de novas aplicações e serviços de rede.
-				</p>
-
-				<h1>Separação dos Planos</h1>
-
-				<p>
-					A principal característica de SDN é a separação do plano de dados do plano de controle. Na arquitetura atual, estes estão acoplados e são individuais por cada nó da rede, atuando em conjunto de modo a encaminhar os pacotes recebidos. Após a separação, o plano de controle passa a ser responsável pela parte "inteligente" da rede, determinando quais serão as rotas seguidas por novos pacotes; por outro lado, o plano de dados fica responsável somente pelo próprio encaminhamento físico dos pacotes. Com SDN, um controlador passa a ser responsável pelo gerenciamento de múltiplos nós da rede, abrindo assim a possibilidade de toda a rede ser configurada a partir de um único nó central.
+					Redes Definidas por Software (SDN) são caracterizadas pela separação física entre o plano de controle e o plano de dados. Com essa separação, o controle de mecanismos de encaminhamento passa a ser implementado através de uma interface de programação implementada mediante um controlador, que fica localizado no plano de controle. Desse modo, através dessa interface o administrador de rede é capaz de inspecionar, definir e alterar as entradas da tabela de roteamento dos comutadores desejados, e estes passam a ser responsáveis somente pelo processo de encaminhamento dos pacotes recebidos. Além disso, com SDN um controlador passa a ser responsável pelo gerenciamento de múltiplos nós da rede, abrindo assim a possibilidade de toda a rede ser configurada a partir de um único nó central. Ao abstrair a infraestrutura da rede de modo a facilitar a construção de novas aplicações e serviços, a tecnologia busca reduzir a atual "calcificação" vista na Internet.
 				</p>
 
 				<img id="sdn-planos" src="imagens/sdn1.png">
 				<br>
-				<span><i>Comparação dos planos de controle e dados na arquitetura tradicional e com SDN. Retirado de: https://commsbusiness.co.uk/features/software-defined-networking-sdn-explained/</i></span>	
+				<span><i>Comparação dos planos de controle e dados na arquitetura tradicional e com SDN. Adaptado de: https://commsbusiness.co.uk/features/software-defined-networking-sdn-explained/</i></span>	
 
 				<h1>Controlador</h1>
 
@@ -87,7 +81,7 @@
 				</p>
 
 				<p>
-					A visão global da topologia da rede possibilita o desenvolvimento de análises detalhadas sobre características do fucionamento da rede, permitindo assim que sejam tomadas decisões eficientes sobre quais modificações devem ser implementadas para garantir o bom funcionamento do sistema. A existência dessa visão global, além de simplificar o processo de tomada de decisões, também facilita a implementação das ações determinadas por ele.
+					A visão global da topologia da rede possibilita o desenvolvimento de análises detalhadas sobre características do funcionamento da rede, permitindo assim que sejam tomadas decisões eficientes sobre quais modificações devem ser implementadas para garantir o bom funcionamento do sistema. A existência dessa visão global, além de simplificar o processo de tomada de decisões, também facilita a implementação dessas decisões para todos os elementos da rede.
 				</p>
 
 				<p>
@@ -97,7 +91,7 @@
 				<h1>APIs (Application Programming Interfaces)</h1>
 
 				<p>
-					Estas APIs são conjuntos de rotinas, protocolos e ferramentas responsáveis por possibilitar a comunicação entre os planos de controle e dados, assim como entre o controlador e aplicações que atuam diretamente na definição de políticas de rede. Essas APIs inicialmente dividem-se em Northbound, responsável pela comunicação entre essas aplicações utilizadas pelo administrador de rede e o plano de controle, e Southbound, responsável pela comunicação entre os plano de controle e dados.
+					Estas APIs são conjuntos de rotinas, protocolos e ferramentas responsáveis por possibilitar a comunicação entre os planos de controle e dados, assim como entre o controlador e aplicações que atuam diretamente na definição de políticas de rede. Essas APIs inicialmente dividem-se em Northbound, responsável pela comunicação entre essas aplicações utilizadas pelo administrador de rede e o plano de controle, e Southbound, responsável pela comunicação entre os planos de controle e dados.
 				</p>
 
 			</div>
@@ -110,7 +104,7 @@
 
 				<img id ="sdn-architecture" src="imagens/sdn2.png">
 				<br>
-				<span><i>Arquitetura simplificada de SDN. Retirado de: https://www.sdxcentral.com/sdn/definitions/inside-sdn-architecture/</i></span>
+				<span><i>Arquitetura simplificada de SDN. Adaptado de: https://www.sdxcentral.com/sdn/definitions/inside-sdn-architecture/</i></span>
 
 				<h1>Plano de Aplicações</h1>
 
@@ -161,27 +155,39 @@
 				<h1>Ferramentas</h1>
 
 				<p>
-					Uma importante característica da área de SDN é a presença de variadas ferramentas, muitas de código aberto, criadas de modo a implementar os elementos necessários para o funcionamento da tecnologia. O OpenFlow, sendo o primeiro protocolo de comunicação implementado tendo em mente a utilização em SDN, atualmente é a principal Southbound API utilizada. Muitas outras fazem uso desta API ou implentam melhorias baseando-se nela, como por exemplo o Open vSwitch (comutador virtual utilizando OpenFlow) e o OVSDB, que implementa o protocolo OpenFlow de modo a este ser compatível com o Open vSwitch. Outras ferramentas importantes são implementações de controladores, como por exemplo o OpenDaylight, que são essenciais para o funcionamento do plano de controle e consequentemente da rede.
+					Uma importante característica da área de SDN é a presença de variadas ferramentas, muitas de código aberto, criadas de modo a implementar os elementos necessários para o funcionamento da tecnologia. O OpenFlow, sendo o primeiro protocolo de comunicação implementado tendo em mente a utilização em SDN, atualmente é a principal Southbound API utilizada. Muitas outras ferramentas fazem uso desta API ou implementam melhorias baseando-se nela, como por exemplo o Open vSwitch (comutador virtual utilizando OpenFlow) e o OVSDB, que implementa o protocolo OpenFlow de modo a este ser compatível com o Open vSwitch. Outras ferramentas importantes são implementações de controladores, como por exemplo o OpenDaylight, que são essenciais para o funcionamento do plano de controle e consequentemente da rede.
 				</p>
 
 				<h1>Open Flow</h1>
 
 				<p>
-					Concebido inicialmente nas universidades de Stanford e Berkeley em 2007, este protocolo é responsável por permitir a manipulação e o acesso direto a equipamentos no plano de dados. Sua funcionalidade advém do uso de uma tabela de fluxos, com os fluxos recebidos sendo comparados aos valores na tabela e o equipamento de rede executando as ações correspondentes, conforme indicado. 
+					Concebido inicialmente nas universidades de Stanford e da Califórnia em Berkeley em 2007, este protocolo é responsável por permitir a manipulação e o acesso direto a equipamentos no plano de dados. Sua funcionalidade advém do uso de uma tabela de fluxos, com os fluxos recebidos sendo comparados aos valores na tabela e o equipamento de rede executando as ações correspondentes, conforme indicado. 
 				</p>
+
+				<p>
+					Servindo como a principal Southbound API utilizada por implementações de SDN, este protocolo foi adotado como o padrão pela Open Networking Foundation. Esta é uma organização dedicada à promoção e adoção de SDN, tendo como parceria múltiplas grandes empresas voltadas à área tecnológica, como Google, Microsoft, Cisco, dentre outras, e que atua principalmente incentivando o desenvolvimento de padrões abertos voltados à SDN.
+				</p>
+
+				<p>
+					A principal característica da classificação utilizada pelo OpenFlow é a abstração dos pacotes recebidos em fluxos. Um fluxo é caracterizado por um conjunto de pacotes, dentro de uma determinada janela de tempo, que possui valores iguais em alguns campos do cabeçalho. O protocolo disponibiliza um total de 12 campos que podem ser utilizados para a classificação dos fluxos recebidos, incluindo IPs de origem e destino, portas de origem e destino, o protocolo da camada de transporte, dentre outros. 
+				</p>
+
+				<p>
+					Assim, torna-se possível a criação de modelos de encaminhamento baseando-se em uma combinação de valores de cabeçalho definida pelo administrador de rede, o que abre uma gama de oportunidades para aqueles interessados em ter um controle maior sobre características da rede. De modo geral, o OpenFlow possibilita a implementação de funcionalidades de hardwares, utilizados na rede tradicional, através da definição de um conjunto simples de regras e de uma tabela de fluxos. As regras criadas incluem as ações que devem ser executadas pelos dispositivos no plano de dados, ações essas que, atuando diretamente nos fluxos examinados, incluem encaminhar, descartar, enviar para o controlador, dentre outras. A imagem abaixo demonstra, de modo simplificado, como atua o protocolo.
+				</p> 
 
 			<img id ="sdn-openflow" src="imagens/sdn3.png">
 				<br>
-				<span><i>Funcionamento do protocolo OpenFlow. Retirado de: http://www.fiber-optic-transceiver-module.com/openvswitch-vs-openflow-what-are-they-whats-their-relationship.html</i></span>
+				<span><i>Funcionamento do protocolo OpenFlow. Adaptado de: http://www.fiber-optic-transceiver-module.com/openvswitch-vs-openflow-what-are-they-whats-their-relationship.html</i></span>
 
 				<h1>Open vSwitch</h1>
 
 				<p>
-					O Open vSwitch é um comutador virtual distribuído, de código aberto, que implementa o protocolo OpenFlow. Sua função é simular comutadores em ambiente virtuais, permitindo que máquinas virtuais comuniquem-se entre si. A principal vantagem que ele traz é a capacidade de simular variadas topologias de rede em um ambiente limitado, permitindo que testes de novas funções virtuais de rede possam ser feitos com maior facilidade. 
+					O Open vSwitch é um comutador virtual distribuído, de código aberto, que implementa o protocolo OpenFlow. Sua função é simular comutadores em ambiente virtuais, permitindo que máquinas virtuais comuniquem-se entre si de modo equivalente a uma rede comum. Dentre as vantagens que ele traz, destaca-se a capacidade de simular variadas topologias de rede em um ambiente limitado, permitindo que testes de novas funções virtuais de rede possam ser feitos com maior facilidade.
 				</p>
 
 				<p>
-					Dentre os recursos oferecidos pelo Open vSwitch, destacam-se: criação e modificação de VLANs e firewalls, modelagem e enfileiramento do tráfego, assim como disponibilização de ferramentas para monitoramento da rede, como Netflow e sFlow.
+					O Open vSwitch foi projetado de modo a permitir configuração e programação de forma automatizada, sendo capaz de se integrar com múltiplos protocolos e padrões utilizados na área de redes. Dentre os recursos oferecidos pelo Open vSwitch, destacam-se: criação e modificação de VLANs e firewalls, modelagem e enfileiramento do tráfego, assim como ferramentas para monitoramento da rede, como o Netflow e o sFlow. Seu código foi escrito em C, tendo em mente facilitar sua portabilidade para variados ambientes.
 				</p>
 
 				<h1>OpenDaylight</h1>
@@ -191,7 +197,7 @@
 				</p>
 
 				<p>
-					Este controlador é implementado completamente por software, tendo sido desenvolvido de modo a funcionar através de um máquina virtual Java. Desse modo, ele pode ser implementado em qualquer plataforma que ofereça suporte à esta linguagem. Outra característica é a adoção de APIs Northbound abertas, o que facilita o desenvolvimento de aplicações que possam se comunicar com facilidade ao controlador.
+					Este controlador é implementado completamente por software, tendo sido desenvolvido de modo a funcionar através de uma máquina virtual Java. Desse modo, ele pode ser implementado em qualquer plataforma que ofereça suporte à esta linguagem. Outra característica é a adoção de APIs Northbound abertas, o que facilita o desenvolvimento de aplicações que possam se comunicar com facilidade ao controlador.
 				</p>
 
 				<h1>FlowVisor</h1>
@@ -209,48 +215,43 @@
 				<h1>Qualidade de Serviço (QoS)</h1>
 
 				<p>
-					A busca pela Qualidade de Serviço é uma das aplicações em redes de computadores. O QFlow é um exemplo de sistema que utiliza o paradigma SDN para garantir o isolamento de recursos e a qualidade de serviços para redes virtualizadas. A arquitetura do sistema QFlow é baseada no XenFlow, onde plano de controle é composto pelas máquinas virtuais Xen e o plano de dados por um comutador OpenFlow no domínio privilegiado, que possui acesso direto ao hardware.
+					Uma das possíveis aplicações de SDN pode ser observada na área de QoS. A busca por uma melhor experiência ao utilizar-se tecnologias relacionadas à rede é uma das áreas de pesquisa que mais recebe incentivo, partindo principalmente de grandes empresas distribuidoras de conteúdo. Umá possível implementação de sistema, partindo do paradigma SDN, para se obter uma melhor QoS em redes virtualizadas é o QFlow. A arquitetura do sistema QFlow é baseada no XenFlow, onde o plano de controle é composto por máquinas virtuais Xen e o plano de dados por um comutador OpenFlow com acesso direto ao hardware.
 				</p>
 				<p>
-					O QFlow utiliza filas de encaminhamento associadas a cada roteador virtual, para garantir o isolamento dos recursos de cada rede virtual. Já para garantir a Qualidade de Serviço (QoS), são utilizadas filas na matriz de encaminhamento OpenFlow associadas às máquinas virtuais com os limites de banda superior e inferior bem definidos, garantindo a qualidade do serviço oferecido.
+					O QFlow utiliza filas de encaminhamento associadas a cada roteador virtual, para garantir o isolamento dos recursos de cada rede virtual. Já para garantir a Qualidade de Serviço (QoS), são utilizadas filas na matriz de encaminhamento OpenFlow associadas às máquinas virtuais com os limites de banda superior e inferior bem definidos, garantindo assim a qualidade do serviço oferecido.
 				</p>
 
-				<h1>Software-defined Mobile Network (SDMN)</h1>
+				<h1>Rede Móvel Definida por Software (SDMN - Software-defined Mobile Network)</h1>
 
 				<p>
-					Espera-se que o tráfego de dados móveis cresça mais rápido que a Internet fixa nos próximos anos e as futuras redes móveis devem ser dimensionadas para acomodar o crescimento esperado do tráfego. Para acompanhar o crescimento do tráfego, as redes móveis precisam não apenas passar por processos de arquitetura para otimizar os recursos atuais, mas também para adicionar novos componentes / tecnologias que aumentem a capacidade. No entanto, redes de backhaul móveis contêm dispositivos extremamente complexos e inflexíveis.
-				</p>
-
-				<p>
-					 Nessas bases, o SDN é uma das tecnologias promissoras que deverá resolver essas limitações nas redes móveis atuais. A SDN fornece as melhorias necessárias em flexibilidade, escalabilidade e desempenho para adaptar a rede móvel para acompanhar o crescimento esperado. A rede móvel definida por software (SDMN) está direcionando a atual rede móvel para um modelo centrado em fluxo que emprega hardware barato e um controlador logicamente centralizado. O SDN permite a separação do plano de encaminhamento de dados dos planos de controle. Os switches, roteadores e gateways habilitados para SDN são controlados por meio de um sistema operacional / controlador SDN e são vistos como recursos virtuais. O plano de controle dos elementos de rede móvel pode ser implantado em uma nuvem de operador para computação.
+					Espera-se que o tráfego de dados móveis cresça mais rápido que a Internet fixa nos próximos anos e as futuras redes móveis devem ser dimensionadas para acomodar esse crescimento esperado do tráfego. Para acompanhar esse avanço, as redes móveis precisam passar por processos de atualização de suas arquiteturas não apenas de modo a otimizar os recursos atuais, mas também para adicionar novos componentes e tecnologias. No entanto, redes de backhaul móveis contêm dispositivos extremamente complexos e inflexíveis.
 				</p>
 
 				<p>
-					 Nesse paradigma, cada operador tem a flexibilidade de desenvolver seus próprios conceitos de rede, otimizar sua rede e atender às necessidades específicas de seus assinantes. Além disso, os switches de rede programáveis ​​por software no SDMN usam metodologias modernas de programação ágil. Essas metodologias de software podem ser desenvolvidas, aprimoradas e atualizadas em ciclos muito mais curtos do que o desenvolvimento dos modernos dispositivos de rede de backhaul móvel de última geração.
+					Nessas bases, o SDN é uma das tecnologias promissoras que deverá resolver essas limitações nas redes móveis atuais. A SDN fornece as melhorias necessárias em flexibilidade para adaptar a rede móvel de modo que esta acompanhe o crescimento esperado. A proposta de redes móveis definidas por software (SDMN) direciona a arquitetura atual da rede móvel para um modelo centrado em fluxo, que emprega hardware barato e um controlador logicamente centralizado. Neste caso, o plano de controle dos elementos da rede móvel pode ser implantado em uma nuvem da operadora de telecomunicações responsável por oferecer a cobertura de acesso à rede.
 				</p>
 
 				<p>
-					 A aquisição da virtualização em redes móveis LTE traz a vantagem econômica de duas maneiras. Frist, SDMN requer hardware barato, como servidores de commodities e switches em vez de dispositivos de gateway de backhaul móveis caros. Segundo, a introdução da tecnologia SDN nas redes móveis permite a entrada de novos atores no ecossistema de redes móveis, como ISV (fornecedor independente de software), provedores de nuvem, ISP (Internet Service Providers) e isso mudará o modelo de negócios das redes móveis.
-				</p>
-
-				<h1>Software-defined Wide-Area Network (SD-WAN)</h1>
-
-				<p>
-					SD-WAN (ou SDWAN), que traduzido significa Rede de Área Ampla definida por Software, é uma aplicação específica de SDN com as conexões WAN, que são utilizadas para conectar redes corporativas - incluindo filiais e data centers - em grande distância geográfica.
+					Nesse paradigma, cada operador tem a flexibilidade de desenvolver seus próprios conceitos de rede, otimizar sua rede e atender às necessidades específicas de seus assinantes. Além disso, os switches de rede programáveis ​​por software no SDMN usam metodologias modernas de programação ágil. Essas metodologias de software podem ser desenvolvidas, aprimoradas e atualizadas em ciclos muito mais curtos do que o desenvolvimento dos dispositivos modernos de rede de backhaul móvel de última geração.
 				</p>
 
 				<p>
-					Uma WAN pode ser usada, por exemplo, para conectar filiais a uma rede corporativa central ou para conectar datacenters separados por distância. No passado, essas conexões WAN frequentemente usavam tecnologia que exigia hardware proprietário especial. O movimento SD-WAN procura mover mais do controle de rede é movido para a "nuvem", usando uma abordagem de software.
+					A aquisição da virtualização em redes móveis LTE traz a vantagem econômica de duas maneiras. Primeiramente, SDMN requer hardware barato, como servidores de baixo custo e switches em vez de dispositivos de backhaul móveis caros. Segundo, a introdução da tecnologia SDN permite a entrada de novos atores no ecossistema de redes móveis, como fornecedores independentes de software (ISVs) e provedores de nuvem, introduções essas que potencialmente causarão um grande impacto no modelo de negócios de redes móveis que temos atualmente.
+				</p>
+
+				<h1>Rede de Área Ampla Definida por Software (SD-WAN - Software-defined Wide-Area Network)</h1>
+
+				<p>
+					SD-WAN (ou SDWAN) é uma aplicação que trata de conceitos tanto de SDN quanto de redes WAN. Estas redes são utilizadas para conectar elementos separados por largas áreas geográficas, frequentemente presentes em países ou continentes diferentes. A própria Internet pode ser considerada uma WAN.
 				</p>
 
 				<p>
-					O principal objetivo da tecnologia SD-WAN (SDWAN) é fornecer uma conexão WAN habilitada para nuvem de classe empresarial, segura e simples, com o máximo de tecnologia aberta e baseada em software possível. Isso pode ser usado para fornecer conectividade básica de WAN ou pode ser usado para serviços comerciais premium, como VPN, otimização de WAN e controle de entrega de aplicativos (ADC).
+					Uma WAN pode ser usada, por exemplo, para conectar filiais a uma rede corporativa central ou para conectar data centers separados por grandes distâncias. Atualmente, essas conexões frequentemente utilizam tecnologia que exige hardware proprietário especial. A proposta de SD-WAN procura mover mais do controle de rede para a nuvem, usando uma abordagem de software.
 				</p>
 
 				<p>
-					Espera-se que a tendência acelere nos próximos anos. O que começou como uma solução para conectividade de WAN de centro de filial e data center que requer menos equipamentos proprietários, parece estar se expandindo para uma ampla gama de ofertas e tecnologias SD-WAN (SDWAN), incluindo VPN, segurança, otimização de WAN, NaaS e política de aplicativos ao controle.
+					O principal objetivo de SD-WAN é fornecer uma conexão WAN habilitada para nuvem de classe empresarial, segura e simples, implementada utilizando ao máximo tecnologia aberta e baseada em software. Esta tecnologia pode ser usada para fornecer conectividade básica de WAN, ou para oferecer serviços comerciais premium, como VPN, otimização de WAN e controle de entrega de aplicativos.
 				</p>
-
 
 			</div>
 			<div class="conteudo fonte-pequena" id="desafios">
@@ -312,11 +313,13 @@
 				<h1>Conclusão</h1>
 
 				<p>
-					Apresentamos neste trabalho os principais conceitos de Redes definidas por Software, assunto que vem sendo alvo de muitos estudos e investimentos para variadas áreas da tecnologia. O conceito, resumidamente, se baseia na separação dos planos de controle e de dados para facilitar a configuração da rede, incentivando a criação de muitas aplicações.
+					Apresentamos neste trabalho os principais conceitos de SDN, assim como uma visão básica de sua arquitetura, suas principais ferramentas, aplicações, e os desafios que enfrenta atualmente. Esta é uma área que que vem sendo alvo de muitos estudos para variados ramos da tecnologia, sendo uma das mais promissoras no ramo de redes que possuímos atualmente.
 				</p>
+
 				<p>
-					Além do conceito básico, tentamos também permear aspectos como aplicação, ferramentas, arquiteturas e os desafios que esta tecnologia precisa superar para se tornar uma arquitetura padrão de redes. Com isso, esperamos ter enriquecido bastante a discussão sobre esse tema.
+					Como visto, as principais vantagens de redes definidas por software vem da tentativa de escapar da "calcificação" observada atualmente pela arquitetura de rede, ao tornar possível a implementação de novas tecnologias e protocolos. Este fato, acoplado ao barateamento de custos de capital e operação, a tornam um alvo de múltiplas empresas e organizações do setor de tecnologia de informação, com Google e Microsoft por exemplo atuando como patrocinadores para o desenvolvimento de pesquisa na área. Apesar disso, esta ainda é uma tecnologia em seus estados iniciais de amadurecimento, e muitos são os desafios que precisam ser superados perante as características da rede atual antes que SDN possa se tornar uma arquitetura padrão de redes.
 				</p>
+
 			</div>
 			<div class="conteudo fonte-pequena" id="faq">
 
@@ -362,7 +365,7 @@
 				</p>
 
 				<p>
-					[9] MATTOS, D. M. F.; DUARTE, O. C. M. B. <b>"QFlow: Um Sistema com Garantia de Isolamento e Oferta de Qualidade de Serviço para Redes Virtualizadas".</b> Disponível em: https://www.gta.ufrj.br/ftp/gta/TechReports/MaDu12.pdf  Acessado em 03 de Novembro de 2018
+					[9] MATTOS, D. M. F., and DUARTE, O. C. M. B. <b>"QFlow: Um Sistema com Garantia de Isolamento e Oferta de Qualidade de Serviço para Redes Virtualizadas", XXX Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos - SBRC'2012, pp. 536-549, Ouro Preto, MG, Brazil, Maio, 2012.</b> Disponível em: https://www.gta.ufrj.br/ftp/gta/TechReports/MaDu12.pdf  Acessado em 03 de Novembro de 2018
 				</p>
 
 				<p>
