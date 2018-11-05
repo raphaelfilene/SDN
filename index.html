@@ -212,13 +212,16 @@
 
 			</div>
 			<div class="conteudo fonte-pequena" id="aplicacoes">
-				<h1>Qualidade de Serviço (QoS)</h1>
+				<h1>Redes Domésticas</h1>
 
 				<p>
-					Uma das possíveis aplicações de SDN pode ser observada na área de QoS. A busca por uma melhor experiência ao utilizar-se tecnologias relacionadas à rede é uma das áreas de pesquisa que mais recebe incentivo, partindo principalmente de grandes empresas distribuidoras de conteúdo. Umá possível implementação de sistema, partindo do paradigma SDN, para se obter uma melhor QoS em redes virtualizadas é o QFlow. A arquitetura do sistema QFlow é baseada no XenFlow, onde o plano de controle é composto por máquinas virtuais Xen e o plano de dados por um comutador OpenFlow com acesso direto ao hardware.
+					Embora consista num grande desafio para a indústria de redes, uma das grandes aplicações do SDN são as redes domésticas.
 				</p>
 				<p>
-					O QFlow utiliza filas de encaminhamento associadas a cada roteador virtual, para garantir o isolamento dos recursos de cada rede virtual. Já para garantir a Qualidade de Serviço (QoS), são utilizadas filas na matriz de encaminhamento OpenFlow associadas às máquinas virtuais com os limites de banda superior e inferior bem definidos, garantindo assim a qualidade do serviço oferecido.
+					Uma forma de aplicar os princípios de SDN nesse contexto é utilizar um roteador doméstico com recursos OpenFlow e transferir para o provedor de acesso a responsabilidade de controlar a rede atraves de um controlador SDN. Dessa forma, esse sistema operacinal de rede seria capaz de programar cada roteador domestico com as regras de acesso apropriadas para cada usuario e ter uma visão global de todo o tráfego que atravessa o enlace de acesso a cada residencia, construindo dessa forma uma visão agregadado que pode ser considerado tráfego lícito e quais padrões de tráfego podem indicar a ação de atacantes ou código malicioso.
+				</p>
+				<p>
+					Por outro lado, outra solução interessante pode ser a implementação de um controlador de rede interno à rede doméstica. Essa solução se torna atraente especialmente frente ao aumento da complexidade dessas redes, que contam hoje com um número crescente de dispositivos ativos, como smartphones e consoles de jogos, além dos computadores usuais. Além disso, essa solução poderiam contar com mais de um elemento de comutação, tanto para enlaces cabeados quanto para enlaces sem fio. Assim, um controlador doméstico poderia acompanhar todo o tráfego interno de rede, tornando mais simples a detecção de malwares e a configuração de serviços da rede, como impressoras e novos dispositivos de acesso.
 				</p>
 
 				<h1>Rede Móvel Definida por Software (SDMN - Software-defined Mobile Network)</h1>
@@ -363,9 +366,8 @@
 				<p>
 					[8] JAMMAL, Manar; SINGH, Taranpreet; SHAMI, Abdallah; ASAL, Rasool; LI, Yiming. <b>"Software defined networking: State of the art and research challenges", Computer Networks, Julho, 2014.</b> Disponível em: https://ac.els-cdn.com/S1389128614002588/1-s2.0-S1389128614002588-main.pdf?_tid=e1cc7a13-6eb8-4624-8532-332f1fd97d66&acdnat=1536675943_8409c98826bfbf8d0c9bd62a6cb6d753  Acessado em 11 de Setembro de 2018
 				</p>
-
 				<p>
-					[9] MATTOS, D. M. F., and DUARTE, O. C. M. B. <b>"QFlow: Um Sistema com Garantia de Isolamento e Oferta de Qualidade de Serviço para Redes Virtualizadas", XXX Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos - SBRC'2012, pp. 536-549, Ouro Preto, MG, Brazil, Maio, 2012.</b> Disponível em: https://www.gta.ufrj.br/ftp/gta/TechReports/MaDu12.pdf  Acessado em 03 de Novembro de 2018
+					[9] GUEDES, Dorgival; VIEIRAL, Luiz Filipe Menezes; VIERAL, Marcos Menezes. <b>"Redes Definidas por Software: uma abordagem sistemica para o desenvolvimento das pesquisas em Redes de Computadores"</b> Disponível em: https://homepages.dcc.ufmg.br/~mmvieira/cc/papers/minicurso-sdn.pdf  Acessado em 04 de Novembro de 2018
 				</p>
 
 				<p>
