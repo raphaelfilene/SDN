@@ -57,9 +57,6 @@
 					O sucesso da área de redes e da Internet é algo que pode ser observado com facilidade. Muitas das atividades realizadas atualmente estão conectadas de algum modo às redes de computadores, de tal modo que sem a Internet diversos serviços essenciais para o funcionamento da sociedade parariam de funcionar. Entretanto, essa dependência trouxe consigo uma expectativa de que a Internet estará sempre estável e funcional. Logo, implantar novas tecnologias e protocolos se torna uma tarefa árdua, dado que há um risco de interrupção de atividades que não é aceitável na conjuntura atual. Com essa inflexibilidade da arquitetura de redes, passou-se então a afirmar que a Internet está "calcificada".
 				</p>
 				<p>
-					Além disso, modificações de configurações de rede devem ser feitas manualmente em cada componente, com o processo de configuração muitas vezes variando dependendo do fabricante. Isso implica em maiores gastos, dado que requerem-se pessoas com conhecimento especializado de como tratar de cada equipamento, além do fato de que tratar todos os componentes em uma rede grande consome uma quantia considerável de tempo. 
-				</p>
-				<p>
 					É com este contexto que começou a ser desenvolvida a tecnologia de Redes Definidas por Software (SDN). Esta foi feita de modo a permitir um gerenciamento automático e eficiente da rede, facilitando o controle de múltiplas redes de computadores e a implementação de novas tecnologias e protocolos.
 				</p>		
 			</div>
@@ -176,7 +173,7 @@
 					Assim, torna-se possível a criação de modelos de encaminhamento baseando-se em uma combinação de valores de cabeçalho definida pelo administrador de rede, o que abre uma gama de oportunidades para aqueles interessados em ter um controle maior sobre características da rede. De modo geral, o OpenFlow possibilita a implementação de funcionalidades de hardwares, utilizados na rede tradicional, através da definição de um conjunto simples de regras e de uma tabela de fluxos. As regras criadas incluem as ações que devem ser executadas pelos dispositivos no plano de dados, ações essas que, atuando diretamente nos fluxos examinados, incluem encaminhar, descartar, enviar para o controlador, dentre outras. A imagem abaixo demonstra, de modo simplificado, como atua o protocolo.
 				</p> 
 
-			<img id ="sdn-openflow" src="imagens/sdn3.png">
+				<img id ="sdn-openflow" src="imagens/sdn3.png">
 				<br>
 				<span><i>Funcionamento do protocolo OpenFlow. Adaptado de: http://www.fiber-optic-transceiver-module.com/openvswitch-vs-openflow-what-are-they-whats-their-relationship.html</i></span>
 
@@ -189,6 +186,11 @@
 				<p>
 					O Open vSwitch foi projetado de modo a permitir configuração e programação de forma automatizada, sendo capaz de se integrar com múltiplos protocolos e padrões utilizados na área de redes. Dentre os recursos oferecidos pelo Open vSwitch, destacam-se: criação e modificação de VLANs e firewalls, modelagem e enfileiramento do tráfego, assim como ferramentas para monitoramento da rede, como o Netflow e o sFlow. Seu código foi escrito em C, tendo em mente facilitar sua portabilidade para variados ambientes.
 				</p>
+
+
+				<img id ="sdn-ovswitch" src="imagens/openvswitch.png">
+				<br>
+				<span><i>Funções disponibilizadas pelo Open vSwitch. Adaptado de: https://www.openvswitch.org/</i></span>
 
 				<h1>OpenDaylight</h1>
 
@@ -292,6 +294,10 @@
 					Outra vulnerabilidade introduzida vem do fato de muitas vezes a implementação de SDN se dar através de padrões abertos e conhecidos. Desse modo, atacantes podem utilizar o conhecimento sobre características da rede para descobrir e se aproveitar de possíveis vulnerabilidades. Invadir uma rede ou implementar código malicioso se tornam então falhas de segurança com um risco considerável de ocorrerem, e são desafios descobrir métodos tanto para evitar que estes ataques ocorram quanto para tratar das consequências de modo a minimizar os danos causados.
 				</p>
 
+				<img id="sdn-securanca" src="imagens/seguranca.png">
+				<br>
+				<span><i>Possíveis pontos de ataque em uma SDN. Adaptado de: https://link.springer.com/article/10.1007/s11036-016-0676-x</i></span>
+
 				<h1>Desempenho</h1>
 
 				<p>
@@ -320,7 +326,7 @@
 				</p>
 
 				<p>
-					Como visto, as principais vantagens de redes definidas por software vem da tentativa de escapar da "calcificação" observada atualmente pela arquitetura de rede, ao tornar possível a implementação de novas tecnologias e protocolos. Este fato, acoplado ao barateamento de custos de capital e operação, a tornam um alvo de múltiplas empresas e organizações do setor de tecnologia de informação, com Google e Microsoft por exemplo atuando como patrocinadores para o desenvolvimento de pesquisa na área. Apesar disso, esta ainda é uma tecnologia em seus estados iniciais de amadurecimento, e muitos são os desafios que precisam ser superados perante as características da rede atual antes que SDN possa se tornar uma arquitetura padrão de redes.
+					Como visto, as principais vantagens de redes definidas por software vem da tentativa de escapar da "calcificação" observada atualmente pela arquitetura de rede, ao tornar possível a implementação de novas tecnologias e protocolos. Isto torna SDN um alvo de grandes empresas e organizações do setor de tecnologia de informação, com Google e Microsoft, que atuam como patrocinadores para o desenvolvimento de pesquisa na área. Apesar disso, esta ainda é uma tecnologia em seus estados iniciais de amadurecimento, e muitos são os desafios que precisam ser superados perante as características da rede atual antes que SDN possa se tornar uma arquitetura padrão de redes.
 				</p>
 
 			</div>
@@ -339,6 +345,24 @@
 				<p class="resposta">
 					Quando o fluxo dos pacotes sendo recebidos ainda não está definido, o OpenFlow envia os pacotes para o controlador de modo a este definir que ação deve ser tomada para fluxos semelhantes. Os fluxos são então enviados novamente ao plano de dados para que sejam então encaminhados de acordo com as definições feitas pelo controlador, e todo fluxo subsequente que se encaixe no mesmo elemento na tabela de fluxos seguirá pelo mesmo caminho.
 				</p>
+				<p class="pergunta">
+					Uma das principais motivações para o desenvolvimento de SDN dá-se ao afirmar que a estrutura de rede atual está “calcificada”. Explique o significado do termo:
+				</p>
+				<p class="resposta">
+					Devido a necessidade de a Internet estar sempre estável, dificulta-se o processo de desenvolvimento de novas aplicações e protocolos de rede pelo risco de interrupção das atividades. Essa imutabilidade da rede fez com que esta passasse a ser considerada “calcificada”.
+				</p>
+				<p class="pergunta">
+					Por que a utilização de SD-WANs pode ser uma aplicação de grande interesse para uso empresarial?
+				</p>
+				<p class="resposta">
+					Pois ela permite a criação de WANs de alto desempenho por baixos custos, dado que essa implementação é feita em hardware genérico e configurada por software. Essas WANs podem ser utilizadas para conectar filiais ou data centers separados por largas distâncias.
+				</p>
+				<p class="pergunta">
+					Cite os 4 principais desafios que a área de SDN enfrenta atualmente:
+				</p>
+				<p class="resposta">
+					Os desafios são: escalabilidade, segurança, desempenho e interoperabilidade.
+				</p>				
 			</div>
 			<div class="conteudo fonte-pequena" id="referencias">
 				<h1>Referências</h1>
